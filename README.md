@@ -250,5 +250,35 @@ section {
 
  >Clase 13
 
+**A partir de aqui modificamos aplicamos los conceptos en la carpeta platzi_sass**
+
+`%` -> Este selector nos permite declarar propiedades sin necesidad de imprimirse en nuestro archivo CSS final como clase base, con ello ahorramos lineas de código
+
+``` scss
+%max-width {
+  max-width: 80%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.section {
+  @extend %max-width;
+}
+
+.container {
+  @extend %max-width;
+}
+```
+
+**Resultado:**
+
+``` css
+  .section .container {
+    max-width: 80%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+```
+
 
 
