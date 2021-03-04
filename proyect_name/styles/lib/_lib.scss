@@ -1,4 +1,35 @@
 /* --------------------------- *\
-        $BUTTONS
+        $LAYOUTS
 \* --------------------------- */
+
+.header {
+        display: flex;
+        align-items: center;
+        height: auto;
+        color: $color-w;
+        background-color: $color-darkgrey;
+        @include max-width(1800px);
+        @extend .padding-y;
+        @extend .center;
+}
+
+.features {
+
+        height: auto;
+        flex: 1;
+        background-color: $color-lightgrey;
+        margin-bottom: 10px;
+        border-radius: $border-radius;
+        @extend .padding-y;
+
+        @include max-width(1420px);
+        @include respond-to (1200px) {
+                background-color: $success-color;
+                @include max-width (80vw);
+        }
+}
+
+.box {
+        @include max-width(1024px);
+}
 

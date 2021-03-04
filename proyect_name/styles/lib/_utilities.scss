@@ -1,0 +1,92 @@
+/* --------------------------- *\
+        $EXTENDS
+\* --------------------------- */
+
+    /* Buttons */
+    .btn {
+        width: 15%;
+        display: inline-block;
+        font-size: $button-fontsize;
+        border: none;
+        border-radius: $border-radius;
+        color: $button-color;
+        background-color: $button-bgcolor;
+        transition: .2s;
+        @extend .line-height;
+
+        &__icon {
+                font-size: .6em;
+        }
+
+        &--info {
+                background-color: $info-color;
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+
+    /* Centered */
+
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* espaciados */
+
+    .padding-x {
+        padding: 0 12px;
+    }
+
+    .padding-y {
+        padding: 8px 0;
+    }
+
+    .margin-x {
+        margin: 0 20px;
+    }
+
+    /* Salto de linea */
+
+    .line-height {
+        line-height: 2.5;
+}
+
+/* --------------------------- *\
+        $MIXINS
+\* --------------------------- */
+
+    @mixin body_max-width {
+        max-width: 1920px;
+    }
+
+    @mixin max-width ($max-width: 0px) {
+        max-width: $max-width;
+        @extend .center;
+    }
+
+    // Mediaqueries
+
+    @mixin respond-to ($width) {
+        @media only screen and (max-width: $width) {
+            @content;
+        }
+    }
+
+    // Responsive titles
+
+    @mixin titles ($titles-fontsize) {
+        h1 {
+            font-size: $titles-fontsize;
+        }
+
+        h2 {
+            font-size: $titles-fontsize - .2px;
+        }
+
+        h3 {
+            font-size: $titles-fontsize - .5px;
+        }
+    }

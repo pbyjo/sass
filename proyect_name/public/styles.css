@@ -9,20 +9,97 @@
 /* --------------------------- *\
         $FONTS
 \* --------------------------- */
+/* --------------------------- *\
+        $CONSTANTES
+\* --------------------------- */
+/* --------------------------- *\
+        $EXTENDS
+\* --------------------------- */
+/* Buttons */
+.btn {
+  width: 15%;
+  display: inline-block;
+  font-size: 19.2px;
+  border: none;
+  border-radius: 10px;
+  color: #FFF;
+  background-color: #EA83EE;
+  transition: 0.2s;
+}
+.btn__icon {
+  font-size: 0.6em;
+}
+.btn--info {
+  background-color: #5474f5;
+}
+.btn:active {
+  transform: scale(0.9);
+}
+
+/* Centered */
+.center, .box, .features, .header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* espaciados */
+.padding-x, h2,
+h3 {
+  padding: 0 12px;
+}
+
+.padding-y, .features, .header {
+  padding: 8px 0;
+}
+
+.margin-x {
+  margin: 0 20px;
+}
+
+/* Salto de linea */
+.line-height, .btn {
+  line-height: 2.5;
+}
+
+/* --------------------------- *\
+        $MIXINS
+\* --------------------------- */
 * {
   flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+h2,
+h3 {
+  text-align: justify;
+}
+
+p {
+  font-size: 16px;
+  padding: 20px;
+}
+@media only screen and (max-width: 800px) {
+  p {
+    font-size: 12px;
+  }
 }
 
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Quicksand", Verdana, Geneva, Tahoma, sans-serif;
   background-color: #FFF;
   overflow-y: hidden;
   overflow-x: hidden;
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
+  max-width: 1920px;
 }
 
 table > tr:hover {
@@ -31,7 +108,38 @@ table > tr:hover {
 
 /* Librerias y componentes */
 /* --------------------------- *\
-        $BUTTONS
+        $LAYOUTS
+\* --------------------------- */
+.header {
+  display: flex;
+  align-items: center;
+  height: auto;
+  color: #FFF;
+  background-color: #2b2d42;
+  max-width: 1800px;
+}
+
+.features {
+  height: auto;
+  flex: 1;
+  background-color: #edf2f4;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  max-width: 1420px;
+}
+@media only screen and (max-width: 1200px) {
+  .features {
+    background-color: #30e92c;
+    max-width: 80vw;
+  }
+}
+
+.box {
+  max-width: 1024px;
+}
+
+/* --------------------------- *\
+        $
 \* --------------------------- */
 
 /*# sourceMappingURL=styles.css.map */

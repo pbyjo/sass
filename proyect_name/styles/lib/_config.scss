@@ -2,37 +2,43 @@
         $COLORS
 \* --------------------------- */
 
-    /* Bases */
-    $color-w : #FFF;
-    $color-b : #000;
+        /* Bases */
+        $color-w : #FFF;
+        $color-b : #000;
 
-    $color-darkgrey : #4D4D4D;
-    $color-grey : #737373;
-    $color-lightgrey: #BFBFBF;
+        $color-darkgrey : #2b2d42;
+        $color-grey : #737373;
+        $color-lightgrey: #edf2f4;
 
-    /* Branding */
-    $color-mark : #EA83EE;
-    $color-secundary : rgba(219, 216, 121, 1);
+        /* Branding */
+        $color-mark : #EA83EE;
+        $color-secundary : rgba(219, 216, 121, 1);
 
-    /* Alert */
-    $danger-color:#ff0000;
-    $warning-color: #ffa500;
-    $success-color: #30e92c;
-    $info-color: #5474f5;
-    $primary-color: #584aff;
+        /* Alert */
+        $danger-color:#ff0000;
+        $warning-color: #ffa500;
+        $success-color: #30e92c;
+        $info-color: #5474f5;
+        $primary-color: #584aff;
 
-    /* Text colors */
-    $blue-text:blue;
-    $yellow-text:yellow;
-    $orange-text:orange;
+        /* Text colors */
+        $blue-text:blue;
+        $yellow-text:yellow;
+        $orange-text:orange;
 
 /* --------------------------- *\
         $FONTS
 \* --------------------------- */
+        $basefont: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
+        $base-fontsize : 16px;
+        $titles-fontsize : 18px;
 
-    $basefont: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
-    $base-fontsize : 16px;
+        $button-color : $color-w;
+        $button-bgcolor : $color-mark;
+        $button-fontsize : ($base-fontsize * 1.2);
 
-    $button-color : $color-w;
-    $button-bgcolor : $color-mark;
+/* --------------------------- *\
+        $CONSTANTES
+\* --------------------------- */
+        $border-radius : 10px;
 
