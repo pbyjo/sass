@@ -3,6 +3,7 @@
 }
 
 h1 {
+    font-size: map-get($fs, xxl);
     text-align: center;
     text-transform: capitalize;
     letter-spacing: .5px;
@@ -10,12 +11,13 @@ h1 {
 
 h2,
 h3 {
+    font-size: map-get($fs, xl);
     text-align: justify;
     @extend .padding-x;
 }
 
 p {
-    font-size: $base-fontsize;
+    font-size: map-get($fs, normal) ;
     padding: 20px;
     @include respond-to (800px) {
         font-size: $base-fontsize - 4px;

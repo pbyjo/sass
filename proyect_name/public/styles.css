@@ -19,18 +19,12 @@
 .btn {
   width: 15%;
   display: inline-block;
-  font-size: 19.2px;
+  font-size: 21.6px;
   border: none;
   border-radius: 10px;
   color: #FFF;
   background-color: #EA83EE;
   transition: 0.2s;
-}
-.btn__icon {
-  font-size: 0.6em;
-}
-.btn--info {
-  background-color: #5474f5;
 }
 .btn:active {
   transform: scale(0.9);
@@ -64,11 +58,21 @@ h3 {
 /* --------------------------- *\
         $MIXINS
 \* --------------------------- */
+/* --------------------------- *\
+        $Functions
+\* --------------------------- */
+/* darken($color-grey, 25%); oscurecer */
+/* lighten($color-grey, 25%);  */
+.header {
+  z-index: 50;
+}
+
 * {
   flex-wrap: wrap;
 }
 
 h1 {
+  font-size: 26px;
   text-align: center;
   text-transform: capitalize;
   letter-spacing: 0.5px;
@@ -76,16 +80,17 @@ h1 {
 
 h2,
 h3 {
+  font-size: 24px;
   text-align: justify;
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   padding: 20px;
 }
 @media only screen and (max-width: 800px) {
   p {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -98,7 +103,7 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
   position: relative;
-  font-size: 16px;
+  font-size: 18px;
   max-width: 1920px;
 }
 

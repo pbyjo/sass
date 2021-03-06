@@ -250,7 +250,7 @@ section {
 
  >Clase 13
 
-**A partir de aqui modificamos aplicamos los conceptos en la carpeta platzi_sass**
+**A partir de aqui agregamos platzi_sass y seguimos aplicando conceptos en proyect_name**
 
 `%` -> Este selector nos permite declarar propiedades sin necesidad de imprimirse en nuestro archivo CSS final como clase base, con ello ahorramos lineas de código
 
@@ -279,6 +279,230 @@ section {
     margin-left: 0;
   }
 ```
+
+### M6 - FUNCIONES
+
+#### Funciones (scripts preestablecidos)
+
+ >Clase 14
+
+``` scss 
+                    //Function de esclarecer un color
+    $color-darkgreey : lighten($color-grey, 25%);
+                        /* darken($color-grey, 25%); oscurecer */
+                        /* lighten($color-grey, 25%);  */
+                        
+    $color-invert: invert($danger-color);   
+```
+
+`https://sass-lang.com/documentation/modules`
+
+#### Directiva
+
+ >Clase 15
+
+``` scss
+  /* 
+  @function adicion ($numero-uno, $numero-dos) {
+    @return;
+  } 
+  */
+
+  @function adicion ($numero-uno, $numero-dos) {
+    @return $numero-uno + $numero-dos;
+  }
+
+  .div {
+    padding: adicion(10px, 5px) ;
+  }
+```
+
+#### Ejemplos de funciones
+
+ >Clase 16
+
+``` scss 
+// map. listas. array
+  // LLave & valor
+
+  // font-size
+  $fs : (
+    xxl : 28px,
+    xl : 24px,
+    normal : 16px,
+    sm : 14px,
+    xs : 12px,
+  );
+
+  p {
+    font-size: map-get($fs, normal) ;
+  }
+
+  %small {
+    color: grey;
+    font-size: map-get($fs, sm) ;
+  }
+```
+
+#### Reto
+
+ >Clase 16
+
+Crear un array con los diferentes valores de z-index que utilicemos en nuestro proyecto:
+
+``` scss 
+    /* 
+      $indices:(
+        raiz: 1000,
+        carrousel: 1010,
+        tooltip: 1020,
+        navmenu: 1030,
+        modal: 1040
+      );
+
+      @function setIndex($capa){
+        @return map-get($indices,$capa);
+      }
+
+      .message{
+        z-index:setIndex(modal)
+      }
+    */
+  $zi : (
+    c1 : 0,
+    c2 : 10,
+    c3 : 20,
+    c4 : 30,
+    c5 : 30,
+    c6 : 40,
+    c7 : 50,
+      //
+      raiz: 1000,
+      carrousel: 1010,
+      tooltip: 1020,
+      navmenu: 1030,
+      modal: 1040
+  );
+
+  .header {
+      z-index: map-get($zi , c7);
+  }
+```
+
+#### Solución (una de tantas)
+
+ >Clase 18
+
+En el reto anterior el profesor propuso crear una función que nos permita manejar los z-index de nuestro proyecto. Para esto, lo primero que debemos hacer es definir cuales son las respectivas propiedades y valores que vamos a manejar. En este caso decidí que los elementos que suelen tener la propiedad de z-index son:
+
+    Los dropdown que contenga mi proyecto.
+    Los elementos sticky.
+    Los modales
+    El overlay de cada modal
+    Los tooltip
+
+Una vez definido esto, vamos a asignarle un valor. Es importante que no sean valores seguidos, ya que puede que necesitemos agregar la propiedad de z-index a elementos individuales en el camino y no queremos que se pisen. Para esto, dejaremos un margen de 20 entre cada uno.
+
+``` scss 
+
+  /*  
+    dropdown => es como el campo select de html
+    sticky => un elemento que permanece fijo aunque se haga scroll en la pagina (ej. barra de redes sociales)
+    modal => ventanas emergentes, tambien llamadas popups
+    overlay => el fondo negro que cubre toda la pagina cuando abres un modal
+    tooltip => la etiqueta descriptiva que aparece cuando pones el cursor sobre un elemento
+  */
+
+  $fs: ( 
+    zindex-dropdown: 100, 
+    zindex-sticky: 120, 
+    zindex-modal: 140, 
+    zindex-overlay:160,
+    zindex-tooltip:180
+  );
+
+  .sticky{
+    z-index: map-get($fs, zindex-sticky);
+  }
+```
+
+### M7 - CONTROLES DE FLUJO
+
+#### listas y directiva each
+
+ >Clase 19
+
+``` scss 
+  $itl : italic;
+
+  $font-weights : (
+    normal : 500,
+    gr : 600,
+    bold : 700,
+    $itl : italic,
+  );
+
+  @each $font in (normal, bold, $itl) {
+    .#{$font} {
+      font-weight: $font;
+    }
+  }
+```
+
+Un ejemplo con mas utilidad: 
+
+``` scss
+  $actores: Juan Pedro Mariel Alejo Jose;
+
+  @each $actor in $actores {
+    .#{$actor}-foto{
+      background: image-url("images/foto-#{$actor}.jpg") no-repeat;
+    }
+  }
+```
+
+#### Ciclos for / each
+
+ >Clase 20
+
+``` scss 
+  @for $i from 1 to 5 {
+    .class-#{$i} {
+      &:before {
+        content:  "#{$i}";
+      }
+    }
+  }
+```
+
+#### Condicionales
+
+ >Clase 21
+
+ Reto: Inteta hacer un grid para utilizarlo en un proyecto de 12 columnas con la directiva for.
+
+``` scss
+  $background-color: black;
+
+  %p {
+    text-color: black;
+  }
+
+  @if $background-color == black {
+    p {
+      text-color: white;
+    }
+  } @else {
+    p {
+      @extend %p;
+    }
+  }
+
+```
+
+
+
+
 
 
 

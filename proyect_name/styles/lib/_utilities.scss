@@ -3,7 +3,8 @@
 \* --------------------------- */
 
     /* Buttons */
-    .btn {
+
+    %button-properties {
         width: 15%;
         display: inline-block;
         font-size: $button-fontsize;
@@ -25,6 +26,10 @@
         &:active {
             transform: scale(.9);
         }
+    }
+
+    .btn {
+        @extend %button-properties;
     }
 
     /* Centered */
@@ -90,3 +95,51 @@
             font-size: $titles-fontsize - .5px;
         }
     }
+
+/* --------------------------- *\
+        $Functions
+\* --------------------------- */
+                        //Function de esclarecer un color
+    $color-darkgreey : lighten($color-grey, 25%);
+                        /* darken($color-grey, 25%); oscurecer */
+                        /* lighten($color-grey, 25%);  */
+
+    $color-invert: invert($danger-color);
+
+
+    // map. listas. array
+        // LLave & valor
+
+        // font-size
+        $fs : (
+            xxl : 26px,
+            xl : 24px,
+            normal : 18px,
+            sm : 14px,
+            xs : 12px,
+        );
+
+        %small {
+            color: $color-lightgrey;
+            font-size: map-get($fs, sm) ;
+        }
+
+        $zi : (
+            c1 : 0,
+            c2 : 10,
+            c3 : 20,
+            c4 : 30,
+            c5 : 30,
+            c6 : 40,
+            c7 : 50,
+        );
+
+        .header {
+            z-index: map-get($zi , c7);
+        }
+    
+    
+    // Controles de flujo
+
+    
+
